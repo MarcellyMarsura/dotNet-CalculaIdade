@@ -1,0 +1,23 @@
+{
+  "runtimeTarget": {
+    "name": ".NETCoreApp,Version=v6.0",
+    "signature": ""
+  },
+  "compilationOptions": {},
+  "targets": {
+    ".NETCoreApp,Version=v6.0": {
+      "dotNet.Estudo.CalculaIdade/1.0.0": {
+        "runtime": {
+          "dotNet.Estudo.CalculaIdade.dll": {}
+        }
+      }
+    }
+  },
+  "libraries": {
+    "dotNet.Estudo.CalculaIdade/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    }
+  }
+}

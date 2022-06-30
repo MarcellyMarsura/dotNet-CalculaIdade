@@ -9,6 +9,7 @@
             do
             {
                 NovoCadastro();
+                Console.WriteLine("\nS para sair ou qualquer tecla para continuar...");
             } while (Console.ReadKey().Key != ConsoleKey.S);
 
             ExibirCadastros();  
@@ -16,35 +17,34 @@
 
         static void NovoCadastro()
         {
-            string nome;
-            DateTime dataNascimento;
-            Pessoa p;
             Console.Clear();
             Console.WriteLine("NOVO CADASTRO:");
             do
             {
                 try
                 {
-                    Console.Write("\nNome: ");
-                    nome = Console.ReadLine().Trim();
-
-                    Console.Write("Data de Nascimento: ");
-                    dataNascimento = Convert.ToDateTime(Console.ReadLine());
-
-                    p = new Pessoa(nome: nome,
-                                   dataNascimento: dataNascimento);
-
-                    pessoas.Add(p);
+                    EntradaDeDados();
                     break;
                 }
                 catch (Exception e)
                 {
                     Console.WriteLine($"ERRO: {e.Message}");
                 }
-            } while (true);
+            } while (true); 
+        }
 
+        static void EntradaDeDados()
+        {
+            Console.Write("\nNome: ");
+            var nome = Console.ReadLine().Trim();
 
-            Console.WriteLine("\nAperte S para sair ou qualquer tecla para continuar...");
+            Console.Write("Data de Nascimento: ");
+            var dataNascimento = Convert.ToDateTime(Console.ReadLine());
+
+            var p = new Pessoa(nome: nome,
+                           dataNascimento: dataNascimento);
+
+            pessoas.Add(p);
         }
 
         static void ExibirCadastros()
